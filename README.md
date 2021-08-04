@@ -19,4 +19,4 @@
    
 **流程图**
 
-![image]
+![image](https://github.com/89trillion-songzhiheng/Ranks/blob/main/picture/liuchengtu.png)
