@@ -225,6 +225,7 @@ namespace Your.Namespace.Here.UniqueStringHereToAvoidNamespaceConflicts.Lists
 		void OnDataRetrieved(MyListItemModel[] newItems)
 		{
 			Data.InsertItemsAtEnd(newItems);
+            Data.ResetItems(newItems);
 		}
 	}
 	
