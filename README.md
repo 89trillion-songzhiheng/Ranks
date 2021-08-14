@@ -5,18 +5,43 @@
 2.展示数据列表，并将数据进行降序排列
 3.使用osa插件完成元素服用
 
+ **目录结构**   
+├── BasicListAdapter.cs //使用OSA，加载数据 
+├── BasicListAdapter.cs.meta
+├── MyListItemModel.cs  //设置对应json的字段 
+├── MyListItemModel.cs.meta
+├── MyListItemViewsHolder.cs  //设置对应的unity组件
+├── MyListItemViewsHolder.cs.meta
+├── SimpJson。 //解析json的工具类
+│   ├── SimpleJSON.cs
+│   ├── SimpleJSON.cs.meta
+│   ├── SimpleJSONBinary.cs
+│   ├── SimpleJSONBinary.cs.meta
+│   ├── SimpleJSONDotNetTypes.cs
+│   ├── SimpleJSONDotNetTypes.cs.meta
+│   ├── SimpleJSONUnity.cs
+│   └── SimpleJSONUnity.cs.meta
+├── SimpJson.meta
+├── ViewChange.cs //场景转换控制类
+├── ViewChange.cs.meta
+├── Window.cs    //设置弹窗类
+└── Window.cs.meta
+
+
 **界面结构**
  Hierarchy：
-    1.设置两个场景
-      1)开始场景，包含一个按钮
-      2）排行榜场景，展示前几名的具体数据。
-    
-    
-**代码结构**
-   1）解析json文件，获取排行榜基本数值
-   2）使用osa实现元素复用
-   3）实现倒计时功能
-   
+    1.GameView  //展示排行榜的画布
+      1)OSA     //展示排行榜
+      2)ButtonPanel  //放置后退按钮
+      3)Popups   //弹窗
+      4)Countdown  //倒计时
+      5)CountdownText //倒计时标题
+      6)TrophyBackImage //奖杯背景图
+      7)TrophyImage  //奖杯图片
+      8)TopRank  //头榜
+    2.StartView //初始页面的画布
+      1）BackImage //初始页面背景图
+         
 **流程图**
 
 ![image](https://github.com/89trillion-songzhiheng/Ranks/blob/main/picture/liuchengtu.png)
