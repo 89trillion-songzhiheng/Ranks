@@ -16,7 +16,7 @@
 │   │   ├── MyListItemModel.cs.meta
 │   │   ├── MyListItemViewsHolder.cs //设置对应的UI组件
 │   │   └── MyListItemViewsHolder.cs.meta
-│   ├── InitData.meta
+│   ├── InitData.meta  
 │   ├── Tools
 │   │   ├── TimeFormat.cs  //时间格式化
 │   │   ├── TimeFormat.cs.meta
