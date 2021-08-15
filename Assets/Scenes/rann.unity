@@ -504,7 +504,7 @@ GameObject:
   - component: {fileID: 232957935}
   - component: {fileID: 232957934}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: StartView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1763,10 +1763,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 639e593d489d348188c3ed7f4916ae61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 1255421423}
-  but: {fileID: 914930325}
-  butt: {fileID: 556949118}
+  nickName: {fileID: 353713008}
+  grade: {fileID: 702294969}
+  panelButton: {fileID: 914930325}
+  closebutton: {fileID: 1570412984}
   win: {fileID: 173184990}
+  nameText: {fileID: 1599990123}
+  rankText: {fileID: 376258565}
 --- !u!114 &914930325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2175,7 +2178,7 @@ GameObject:
   - component: {fileID: 1194504153}
   - component: {fileID: 1194504152}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: GameView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2830,10 +2833,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 590f40e57a0ee4fa89d718aebc41abf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  st: {fileID: 232957936}
-  gam: {fileID: 1194504154}
-  but: {fileID: 1537681243}
-  butt: {fileID: 1570412984}
+  startView: {fileID: 232957936}
+  gameView: {fileID: 1194504154}
+  startButton: {fileID: 1537681243}
+  backButton: {fileID: 1570412984}
 --- !u!114 &1537681243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3068,10 +3071,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 590f40e57a0ee4fa89d718aebc41abf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  st: {fileID: 232957936}
-  gam: {fileID: 1194504154}
-  but: {fileID: 1537681243}
-  butt: {fileID: 1570412984}
+  startView: {fileID: 232957936}
+  gameView: {fileID: 1194504154}
+  startButton: {fileID: 1537681243}
+  backButton: {fileID: 1570412984}
 --- !u!1 &1599990121
 GameObject:
   m_ObjectHideFlags: 0
