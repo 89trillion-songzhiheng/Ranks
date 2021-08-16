@@ -16,6 +16,7 @@ public class ViewChange : MonoBehaviour
     void Start()
     {
         startView.SetActive(true);
+        
         startButton.onClick.AddListener(startGame);
         backButton.onClick.AddListener(back);
     }

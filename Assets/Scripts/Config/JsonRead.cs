@@ -15,6 +15,7 @@ public class JsonRead : MonoBehaviour
     private TextAsset jsonfile; //json文件
     private int length; //存储jsonArray长度
     public MyListItemModel[] myList; //存放json数组
+    
     private void Awake()
     {
         myList = GetJson();
@@ -27,7 +28,6 @@ public class JsonRead : MonoBehaviour
         jsonData=jsonfile.text;
         jsonNode = JSONNode.Parse (jsonData);
         length  = jsonNode["list"].Count;
-        
         var jsonList = new MyListItemModel[length];
 			
         for (int i = 0; i < length; ++i)

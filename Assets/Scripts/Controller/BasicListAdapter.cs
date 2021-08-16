@@ -26,16 +26,13 @@ namespace Your.Namespace.Here.UniqueStringHereToAvoidNamespaceConflicts.Lists
 		public Text selfTrophy; //最上方本人奖杯数
 		public Text selfName; //最上方本人姓名
 		public JsonRead jsonRead; //读取json函数
-		public TimeFormat timeFormat; //格式化时间
 		public SimpleDataHelper<MyListItemModel> Data { get; private set; }
 		
-		private int countDownNumber; //倒计时整型
+		private int countDownNumber = 0; //倒计时整型
 		private int day = 0; //倒计时：天
 		private int hour = 0; //倒计时：时
 		private int minute = 0; //倒计时：分
 		private int second = 0; //倒计时：秒
-		
-		
 		
 		#region OSA implementation
 		protected override void Awake()
@@ -46,16 +43,10 @@ namespace Your.Namespace.Here.UniqueStringHereToAvoidNamespaceConflicts.Lists
 			countDown.text = jsonRead.jsonNode["countDown"].ToString();
 			countDownNumber = int.Parse(countDown.text);
 			
-			timeFormat.InitTime(countDown, countDownNumber);
-			day = timeFormat.day;
-			hour = timeFormat.hour;
-			minute = timeFormat.minute;
-			second = timeFormat.second;
-			
-			base.Awake();
-			
 			//开启倒计时
 			StartCoroutine(startCount());
+			
+			base.Awake();
 		}
 		
 		/// <summary> MyMethod is a method in the MyClass class.
@@ -63,31 +54,26 @@ namespace Your.Namespace.Here.UniqueStringHereToAvoidNamespaceConflicts.Lists
 		/// </summary>
 		IEnumerator startCount()
 		{
-			while (second != 0 || minute != 0 || hour != 0 || day != 0)
+		    StringBuilder stringBuilder = new StringBuilder(); //存放时间字符串
+			
+			while (countDownNumber != 0)
 			{
+				yield return new WaitForSeconds(1);
 				RetrieveDataAndUpdate();
 				
-				yield return new WaitForSeconds(1);
-
-				if (second == 0)
-				{
-					minute = minute - 1;
-					second = 59;
-					
-					if (minute == 0)
-					{
-						hour = hour - 1;
-						minute = 59;
-						
-						if (hour == 0)
-						{
-							day = day - 1;
-							hour = 23;
-						}
-					}
-				}
-				second--;
-				countDown.text = string.Concat(day, "d ", hour, "h ", minute, "m ", second, "s");
+				day = countDownNumber / (60 * 60 * 24);
+				hour = countDownNumber / (60 * 60) - day * 24;
+				minute = countDownNumber / 60 - hour * 60 - day * 24 * 60;
+				second = countDownNumber - minute * 60 - hour * 60 * 60 - day * 24 * 60 * 60;
+				
+				stringBuilder.Append(day).Append("d")
+					.Append(hour).Append("h")
+					.Append(minute).Append("m")
+					.Append(second).Append("s");
+				countDown.text = stringBuilder.ToString();
+				stringBuilder.Clear();
+				
+				countDownNumber--;
 			}
 		}
 		
@@ -96,12 +82,12 @@ namespace Your.Namespace.Here.UniqueStringHereToAvoidNamespaceConflicts.Lists
 			var instance = new MyListItemViewsHolder();
 			instance.Init(_Params.ItemPrefab, _Params.Content, itemIndex);
 			
-			
 			if (Data[itemIndex].uid.Equals("3716954261"))
 			{
 				selfTrophy.text = Data[itemIndex].trophy.ToString();
 				selfName.text = Data[itemIndex].nickName;
 			}
+			
 			return instance;
 		}
 		

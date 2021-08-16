@@ -10,14 +10,12 @@ namespace Your.Namespace.Here.UniqueStringHereToAvoidNamespaceConflicts.Lists
     public class MyListItemViewsHolder : BaseItemViewsHolder
     {
         public Image backgroundImage;
-        
-        public Text nickName; //玩家姓名
-        public Text Trophy;  //奖杯
-        public Text Grade; //排名(文字)
-		
+        public Text  Grade; //排名(文字)
         public Image GradeImage; //排名(图片)
+        public Text  nickName; //玩家姓名
         public Image Rank; //段位图片
-		
+        public Text  Trophy;  //奖杯
+        
         public override void CollectViews()
         {
             base.CollectViews();
