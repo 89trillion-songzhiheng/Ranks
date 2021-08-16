@@ -6,36 +6,24 @@
 3.使用osa插件完成元素服用
 
  **目录结构**   
-├── Game
-│   ├── InitData
-│   │   ├── BasicListAdapter.cs //使用OSA，加载数据 
-│   │   ├── BasicListAdapter.cs.meta
-│   │   ├── JsonRead.cs //读取json
-│   │   ├── JsonRead.cs.meta
-│   │   ├── MyListItemModel.cs //设置对应json的字段 
-│   │   ├── MyListItemModel.cs.meta
-│   │   ├── MyListItemViewsHolder.cs //设置对应的UI组件
-│   │   └── MyListItemViewsHolder.cs.meta
-│   ├── InitData.meta  
-│   ├── Tools
-│   │   ├── TimeFormat.cs  //时间格式化
-│   │   ├── TimeFormat.cs.meta
-│   │   ├── ViewChange.cs //场景转换控制类
-│   │   ├── ViewChange.cs.meta
-│   │   ├── Window.cs //设置弹窗类
-│   │   └── Window.cs.meta
-│   └── Tools.meta
-├── Game.meta
-├── SimpJson //解析json的工具类
-│   ├── SimpleJSON.cs
-│   ├── SimpleJSON.cs.meta
-│   ├── SimpleJSONBinary.cs
-│   ├── SimpleJSONBinary.cs.meta
-│   ├── SimpleJSONDotNetTypes.cs
-│   ├── SimpleJSONDotNetTypes.cs.meta
-│   ├── SimpleJSONUnity.cs
-│   └── SimpleJSONUnity.cs.meta
-└── SimpJson.meta
+├── Config 
+│   ├── JsonRead.cs //json数据读取类
+│   └── JsonRead.cs.meta
+├── Config.meta
+├── Controller
+│   ├── BasicListAdapter.cs //osa读取展示item
+│   ├── BasicListAdapter.cs.meta
+│   ├── ViewChange.cs  //场景转换控制类
+│   ├── ViewChange.cs.meta
+│   ├── Window.cs //弹窗控制类
+│   └── Window.cs.meta
+├── Controller.meta
+├── Data  
+│   ├── MyListItemModel.cs  //设置对应json的字段 
+│   ├── MyListItemModel.cs.meta
+│   ├── MyListItemViewsHolder.cs ////设置对应的UI组件
+│   └── MyListItemViewsHolder.cs.meta
+└── Data.meta
 
 
 **界面结构**
