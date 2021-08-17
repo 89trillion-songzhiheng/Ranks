@@ -10,11 +10,11 @@ namespace Your.Namespace.Here.UniqueStringHereToAvoidNamespaceConflicts.Lists
     public class MyListItemViewsHolder : BaseItemViewsHolder
     {
         public Image backgroundImage;
-        public Text  Grade; //排名(文字)
-        public Image GradeImage; //排名(图片)
+        public Text  grade; //排名(文字)
+        public Image gradeImage; //排名(图片)
         public Text  nickName; //玩家姓名
-        public Image Rank; //段位图片
-        public Text  Trophy;  //奖杯
+        public Image rankImage; //段位图片
+        public Text  trophy;  //奖杯
         
         public override void CollectViews()
         {
@@ -23,10 +23,10 @@ namespace Your.Namespace.Here.UniqueStringHereToAvoidNamespaceConflicts.Lists
             //获取设置组件
             root.GetComponentAtPath("nickName", out nickName);
             root.GetComponentAtPath("BackgroundImage", out backgroundImage);
-            root.GetComponentAtPath("GradeImage", out GradeImage);
-            root.GetComponentAtPath("Grade", out Grade);
-            root.GetComponentAtPath("Trophy", out Trophy);
-            root.GetComponentAtPath("Rank", out Rank);
+            root.GetComponentAtPath("GradeImage", out gradeImage);
+            root.GetComponentAtPath("Grade", out grade);
+            root.GetComponentAtPath("Trophy", out trophy);
+            root.GetComponentAtPath("RankImage", out rankImage);
         }
     }
 }

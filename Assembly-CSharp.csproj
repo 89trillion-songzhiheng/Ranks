@@ -58,21 +58,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Game\InitData\BasicListAdapter.cs" />
-     <Compile Include="Assets\Scripts\Game\InitData\JsonRead.cs" />
-     <Compile Include="Assets\Scripts\Game\InitData\MyListItemModel.cs" />
-     <Compile Include="Assets\Scripts\Game\InitData\MyListItemViewsHolder.cs" />
-     <Compile Include="Assets\Scripts\Game\Tools\TimeFormat.cs" />
-     <Compile Include="Assets\Scripts\Game\Tools\ViewChange.cs" />
-     <Compile Include="Assets\Scripts\Game\Tools\Window.cs" />
-     <Compile Include="Assets\Scripts\SimpJson\SimpleJSON.cs" />
-     <Compile Include="Assets\Scripts\SimpJson\SimpleJSONBinary.cs" />
-     <Compile Include="Assets\Scripts\SimpJson\SimpleJSONDotNetTypes.cs" />
-     <Compile Include="Assets\Scripts\SimpJson\SimpleJSONUnity.cs" />
-     <None Include="Assets\Resources\OSA\Resources\OSA\Templates\ScriptsChunks\HeaderComment.txt" />
-     <None Include="Assets\Resources\OSA\Resources\OSA\Templates\Scripts\BasicListAdapter.txt" />
-     <None Include="Assets\Resources\OSA\Resources\OSA\Templates\Scripts\BasicGridAdapter.txt" />
-     <None Include="Assets\Resources\OSA\Docs\Manual link.txt" />
+     <Compile Include="Assets\Scripts\Config\JsonRead.cs" />
+     <Compile Include="Assets\Scripts\Controller\BasicListAdapter.cs" />
+     <Compile Include="Assets\Scripts\Controller\ViewChange.cs" />
+     <Compile Include="Assets\Scripts\Controller\Window.cs" />
+     <Compile Include="Assets\Scripts\Data\MyListItemModel.cs" />
+     <Compile Include="Assets\Scripts\Data\MyListItemViewsHolder.cs" />
+     <Compile Include="Assets\ThirdParty\SimpJson\SimpleJSON.cs" />
+     <Compile Include="Assets\ThirdParty\SimpJson\SimpleJSONBinary.cs" />
+     <Compile Include="Assets\ThirdParty\SimpJson\SimpleJSONDotNetTypes.cs" />
+     <Compile Include="Assets\ThirdParty\SimpJson\SimpleJSONUnity.cs" />
+     <None Include="Assets\ThirdParty\OSA\Resources\OSA\Templates\ScriptsChunks\HeaderComment.txt" />
+     <None Include="Assets\ThirdParty\OSA\Resources\OSA\Templates\Scripts\BasicListAdapter.txt" />
+     <None Include="Assets\ThirdParty\OSA\Resources\OSA\Templates\Scripts\BasicGridAdapter.txt" />
+     <None Include="Assets\ThirdParty\OSA\Docs\Manual link.txt" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>/Users/songzhiheng/Ranks/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

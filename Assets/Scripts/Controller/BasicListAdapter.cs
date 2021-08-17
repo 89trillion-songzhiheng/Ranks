@@ -22,15 +22,16 @@ namespace Your.Namespace.Here.UniqueStringHereToAvoidNamespaceConflicts.Lists
 	/// </summary>
 	public class BasicListAdapter : OSA<BaseParamsWithPrefab, MyListItemViewsHolder>
 	{
-		public Text  countDown; //倒计时对象
+		public Text countDown; //倒计时对象
+		public JsonRead jsonRead; //读取json函数
 		public Text selfTrophy; //最上方本人奖杯数
 		public Text selfName; //最上方本人姓名
-		public JsonRead jsonRead; //读取json函数
 		public SimpleDataHelper<MyListItemModel> Data { get; private set; }
 		
 		private int countDownNumber = 0; //倒计时整型
 		private int day = 0; //倒计时：天
 		private int hour = 0; //倒计时：时
+		private float imageSizeScale = 0.2f; //设置段位图片自定义缩放大小
 		private int minute = 0; //倒计时：分
 		private int second = 0; //倒计时：秒
 		
@@ -40,13 +41,14 @@ namespace Your.Namespace.Here.UniqueStringHereToAvoidNamespaceConflicts.Lists
 			Data = new SimpleDataHelper<MyListItemModel>(this);
 			
 			//获取倒计时字段数据
-			countDown.text = jsonRead.jsonNode["countDown"].ToString();
-			countDownNumber = int.Parse(countDown.text);
+			countDownNumber = jsonRead.jsonNode["countDown"];
 			
 			//开启倒计时
 			StartCoroutine(startCount());
 			
 			base.Awake();
+
+			
 		}
 		
 		/// <summary> MyMethod is a method in the MyClass class.
@@ -54,7 +56,8 @@ namespace Your.Namespace.Here.UniqueStringHereToAvoidNamespaceConflicts.Lists
 		/// </summary>
 		IEnumerator startCount()
 		{
-		    StringBuilder stringBuilder = new StringBuilder(); //存放时间字符串
+			//存放时间字符串
+		    StringBuilder stringBuilder = new StringBuilder(); 
 			
 			while (countDownNumber != 0)
 			{
@@ -82,12 +85,12 @@ namespace Your.Namespace.Here.UniqueStringHereToAvoidNamespaceConflicts.Lists
 			var instance = new MyListItemViewsHolder();
 			instance.Init(_Params.ItemPrefab, _Params.Content, itemIndex);
 			
+			//获取该ID信息，并放置头榜位置
 			if (Data[itemIndex].uid.Equals("3716954261"))
 			{
 				selfTrophy.text = Data[itemIndex].trophy.ToString();
 				selfName.text = Data[itemIndex].nickName;
 			}
-			
 			return instance;
 		}
 		
@@ -100,20 +103,24 @@ namespace Your.Namespace.Here.UniqueStringHereToAvoidNamespaceConflicts.Lists
 			
 			//设置item信息
 			newOrRecycled.nickName.text = model.nickName;
-			newOrRecycled.Trophy.text = model.trophy.ToString();
-			newOrRecycled.GradeImage.sprite =Resources.Load<Sprite>("picture/rank_"+(newOrRecycled.ItemIndex+1));
-			newOrRecycled.Grade.text = (newOrRecycled.ItemIndex + 1).ToString();
-			newOrRecycled.Rank.sprite = Resources.Load<Sprite>("picture/rank/arenaBadge_"+rankImage);
+			newOrRecycled.trophy.text = model.trophy.ToString();
+			newOrRecycled.gradeImage.sprite =Resources.Load<Sprite>("picture/rank_"+(newOrRecycled.ItemIndex+1));
+			newOrRecycled.grade.text = (newOrRecycled.ItemIndex + 1).ToString();
+			newOrRecycled.rankImage.sprite = Resources.Load<Sprite>("picture/rank/arenaBadge_"+rankImage);
+			newOrRecycled.rankImage.rectTransform.sizeDelta = new Vector2(newOrRecycled.rankImage.sprite.rect.width * imageSizeScale,
+				newOrRecycled.rankImage.sprite.rect.height * imageSizeScale);
+			newOrRecycled.backgroundImage.sprite = Resources.Load<Sprite>("picture/rank list_" +(newOrRecycled.ItemIndex+1));
 			
-			//前三名使用奖牌展示排名，后续排名使用数字
+			//前三名使用奖牌展示排名，后续排名使用数字,并设置背景色的通透度
 			if (newOrRecycled.ItemIndex >2)
 			{
-				newOrRecycled.GradeImage.color = new Color(1, 1, 1, 0);
+				newOrRecycled.gradeImage.color = new Color(1, 1, 1, 0);
+				newOrRecycled.backgroundImage.color = new Color(1, 1, 1, 0.4f);
 			}
 			else
 			{
-				newOrRecycled.GradeImage.sprite =Resources.Load<Sprite>("picture/rank_"+(newOrRecycled.ItemIndex+1));
-				newOrRecycled.GradeImage.color = new Color(1, 1, 1, 1);
+				newOrRecycled.gradeImage.color = new Color(1, 1, 1, 1);
+				newOrRecycled.backgroundImage.color = new Color(1, 1, 1, 1);
 			}
 		}
 		

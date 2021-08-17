@@ -58,15 +58,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Resources\OSA\Scripts\Editor\CEditor.cs" />
-     <Compile Include="Assets\Resources\OSA\Scripts\Editor\MenuItems.cs" />
-     <Compile Include="Assets\Resources\OSA\Scripts\Editor\OSAWizard\BaseOSAWindow.cs" />
-     <Compile Include="Assets\Resources\OSA\Scripts\Editor\OSAWizard\CWiz.cs" />
-     <Compile Include="Assets\Resources\OSA\Scripts\Editor\OSAWizard\CreateOSAWindow.cs" />
-     <Compile Include="Assets\Resources\OSA\Scripts\Editor\OSAWizard\CustomAdapterConfigurators\CustomAdapterConfiguratorAttribute.cs" />
-     <Compile Include="Assets\Resources\OSA\Scripts\Editor\OSAWizard\CustomAdapterConfigurators\ICustomAdapterConfigurator.cs" />
-     <Compile Include="Assets\Resources\OSA\Scripts\Editor\OSAWizard\InitOSAWindow.cs" />
-     <None Include="Assets\Resources\OSA\Scripts\Editor\OSA.Editor.asmdef" />
+     <Compile Include="Assets\ThirdParty\OSA\Scripts\Editor\CEditor.cs" />
+     <Compile Include="Assets\ThirdParty\OSA\Scripts\Editor\MenuItems.cs" />
+     <Compile Include="Assets\ThirdParty\OSA\Scripts\Editor\OSAWizard\BaseOSAWindow.cs" />
+     <Compile Include="Assets\ThirdParty\OSA\Scripts\Editor\OSAWizard\CWiz.cs" />
+     <Compile Include="Assets\ThirdParty\OSA\Scripts\Editor\OSAWizard\CreateOSAWindow.cs" />
+     <Compile Include="Assets\ThirdParty\OSA\Scripts\Editor\OSAWizard\CustomAdapterConfigurators\CustomAdapterConfiguratorAttribute.cs" />
+     <Compile Include="Assets\ThirdParty\OSA\Scripts\Editor\OSAWizard\CustomAdapterConfigurators\ICustomAdapterConfigurator.cs" />
+     <Compile Include="Assets\ThirdParty\OSA\Scripts\Editor\OSAWizard\InitOSAWindow.cs" />
+     <None Include="Assets\ThirdParty\OSA\Scripts\Editor\OSA.Editor.asmdef" />
  <Reference Include="UnityEditor.UI">
  <HintPath>/Users/songzhiheng/Ranks/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>

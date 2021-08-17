@@ -11,7 +11,7 @@ using UnityEngine.UI;
 /// </summary>
 public class Window : MonoBehaviour
 {
-    public Button closeButton; //退出查看详情页面按钮
+    public Button closeButton; //退出弹窗页面按钮
     public Text grade; //玩家排名
     public Text nameText; //弹窗中玩家昵称
     public Text nickName; //玩家昵称
