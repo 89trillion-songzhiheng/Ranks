@@ -7,6 +7,7 @@
 4.设置图片适配 
 
  **目录结构**   
+```
 ├── Config 
 │   ├── JsonRead.cs //json数据读取类
 │   └── JsonRead.cs.meta
@@ -25,7 +26,7 @@
 │   ├── MyListItemViewsHolder.cs ////设置对应的UI组件
 │   └── MyListItemViewsHolder.cs.meta
 └── Data.meta
-
+```
 **界面结构**
  Hierarchy：
     1.GameView  //展示排行榜的画布
