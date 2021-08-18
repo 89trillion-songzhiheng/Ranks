@@ -42,4 +42,4 @@
          
 **流程图**
 
-![image](https://github.com/89trillion-songzhiheng/Ranks/blob/main/Assets/Picture/RankPic.png)
+![image](https://github.com/89trillion-songzhiheng/Ranks/blob/main/Picture/RankPic.png)
