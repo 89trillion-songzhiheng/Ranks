@@ -13,15 +13,15 @@
 │   └── JsonRead.cs.meta
 ├── Config.meta
 ├── Controller
-│   ├── BasicListAdapter.cs //osa读取展示item
+│   ├── BasicListAdapter.cs  //osa解析并展示数据
 │   ├── BasicListAdapter.cs.meta
 │   ├── ViewChange.cs  //场景转换控制类
 │   ├── ViewChange.cs.meta
-│   ├── Window.cs //弹窗控制类
+│   ├── Window.cs  //弹窗控制类
 │   └── Window.cs.meta
 ├── Controller.meta
 ├── Data  
-│   ├── MyListItemModel.cs  //设置对应json的字段 
+│   ├── MyListItemModel.cs  //对应json的字段 
 │   ├── MyListItemModel.cs.meta
 │   ├── MyListItemViewsHolder.cs ////设置对应的UI组件
 │   └── MyListItemViewsHolder.cs.meta
