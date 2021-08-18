@@ -21,7 +21,7 @@ namespace Your.Namespace.Here.UniqueStringHereToAvoidNamespaceConflicts.Lists
             base.CollectViews();
             
             //获取设置组件
-            root.GetComponentAtPath("nickName", out nickName);
+            root.GetComponentAtPath("NickName", out nickName);
             root.GetComponentAtPath("BackgroundImage", out backgroundImage);
             root.GetComponentAtPath("GradeImage", out gradeImage);
             root.GetComponentAtPath("Grade", out grade);

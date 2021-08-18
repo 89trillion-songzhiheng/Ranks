@@ -10,6 +10,7 @@ using frame8.Logic.Misc.Other.Extensions;
 using Com.TheFallenGames.OSA.Core;
 using Com.TheFallenGames.OSA.CustomParams;
 using Com.TheFallenGames.OSA.DataHelpers;
+using Config;
 using SimpleJSON;
 using UnityEngine.Serialization;
 using Timer = System.Threading.Timer;
@@ -23,7 +24,7 @@ namespace Your.Namespace.Here.UniqueStringHereToAvoidNamespaceConflicts.Lists
 	public class BasicListAdapter : OSA<BaseParamsWithPrefab, MyListItemViewsHolder>
 	{
 		public Text countDown; //倒计时对象
-		public JsonRead jsonRead; //读取json函数
+		// public JsonRead jsonRead; //读取json函数
 		public Text selfTrophy; //最上方本人奖杯数
 		public Text selfName; //最上方本人姓名
 		public SimpleDataHelper<MyListItemModel> Data { get; private set; }
@@ -34,21 +35,21 @@ namespace Your.Namespace.Here.UniqueStringHereToAvoidNamespaceConflicts.Lists
 		private float imageSizeScale = 0.2f; //设置段位图片自定义缩放大小
 		private int minute = 0; //倒计时：分
 		private int second = 0; //倒计时：秒
-		
+
 		#region OSA implementation
 		protected override void Awake()
 		{
 			Data = new SimpleDataHelper<MyListItemModel>(this);
 			
+			JsonRead.GetJson();
+			
 			//获取倒计时字段数据
-			countDownNumber = jsonRead.jsonNode["countDown"];
+			countDownNumber = int.Parse(JsonRead.jsonNode["countDown"]);
 			
 			//开启倒计时
 			StartCoroutine(startCount());
-			
-			base.Awake();
 
-			
+			base.Awake();	
 		}
 		
 		/// <summary> MyMethod is a method in the MyClass class.
@@ -104,12 +105,12 @@ namespace Your.Namespace.Here.UniqueStringHereToAvoidNamespaceConflicts.Lists
 			//设置item信息
 			newOrRecycled.nickName.text = model.nickName;
 			newOrRecycled.trophy.text = model.trophy.ToString();
-			newOrRecycled.gradeImage.sprite =Resources.Load<Sprite>("picture/rank_"+(newOrRecycled.ItemIndex+1));
+			newOrRecycled.gradeImage.sprite =Resources.Load<Sprite>("Picture/Rank_"+(newOrRecycled.ItemIndex+1));
 			newOrRecycled.grade.text = (newOrRecycled.ItemIndex + 1).ToString();
-			newOrRecycled.rankImage.sprite = Resources.Load<Sprite>("picture/rank/arenaBadge_"+rankImage);
+			newOrRecycled.rankImage.sprite = Resources.Load<Sprite>("Picture/Rank/arenaBadge_"+rankImage);
 			newOrRecycled.rankImage.rectTransform.sizeDelta = new Vector2(newOrRecycled.rankImage.sprite.rect.width * imageSizeScale,
 				newOrRecycled.rankImage.sprite.rect.height * imageSizeScale);
-			newOrRecycled.backgroundImage.sprite = Resources.Load<Sprite>("picture/rank list_" +(newOrRecycled.ItemIndex+1));
+			newOrRecycled.backgroundImage.sprite = Resources.Load<Sprite>("Picture/rank list_" +(newOrRecycled.ItemIndex+1));
 			
 			//前三名使用奖牌展示排名，后续排名使用数字,并设置背景色的通透度
 			if (newOrRecycled.ItemIndex >2)
@@ -136,7 +137,7 @@ namespace Your.Namespace.Here.UniqueStringHereToAvoidNamespaceConflicts.Lists
 		{
 			yield return new WaitForSeconds(.5f);
 			
-			OnDataRetrieved(jsonRead.myList);
+			OnDataRetrieved(JsonRead.myList);
 		}
 
 		void OnDataRetrieved(MyListItemModel[] newItems)
