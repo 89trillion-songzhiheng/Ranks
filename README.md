@@ -28,6 +28,7 @@
 └── Data.meta
 ```
 **界面结构**  
+```
  Hierarchy:  
     1.GameView  //展示排行榜的画布  
       1)OSA     //展示排行榜  
@@ -39,7 +40,7 @@
       7)TrophyImage  //奖杯图片  
       8)TopRank  //头榜  
       9)StartView //初始页面的画布  
-     
+  ```   
          
 **流程图**  
 
